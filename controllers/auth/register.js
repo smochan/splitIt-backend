@@ -1,11 +1,9 @@
-require('dotenv').config();
+require("dotenv").config();
 const User = require("../../models/user");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 // const Cookies = require('js-cookie');
 const saltRounds = 10;
-
-
 
 const register = async (req, res) => {
   try {
@@ -25,22 +23,23 @@ const register = async (req, res) => {
               });
               newUser.save(function (err) {
                 if (err) console.log(err);
-                else {
-                  var token = jwt.sign({ token:  req.body.username}, process.env.SECRET_KEY);
-                  console.log(token);
-                  res.cookie(token, token, {expire: 360000 + Date.now()});
-                  // Cookies.set('token', token, { expires: 1 });
-
-
-                  res.send("user registered");
-                }
+                // else {
+                //   var token = jwt.sign(
+                //     { token: req.body.username },
+                //     process.env.SECRET_KEY
+                //   );
+                // console.log(token);
+                // res.cookie(token, token, { expire: 360000 + Date.now() });
+                // Cookies.set('token', token, { expires: 1 });
+                else res.send("user registered");
+                // }
               });
             });
           }
         }
       }
     );
-  }catch (err) {
+  } catch (err) {
     console.log(err);
     return;
   }

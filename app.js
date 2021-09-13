@@ -21,8 +21,8 @@ const start = async () => {
   app.get("/", function (req, res) {
     res.send("Hello World");
   });
-  // app.get("/login", temp);
-  app.get("/register", temp);
+  app.get("/login", temp);
+  // app.get("/register", temp);
   app.post("/group", group);
 
   app.post("/register", register);
