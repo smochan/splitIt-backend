@@ -25,7 +25,7 @@ const start = async () => {
   app.get("/login", temp);
   // app.get("/register", temp);
   app.post("/group", group);
-  app.get("/contributors", contributors);
+  app.post("/contributors", contributors);
   app.post("/register", register);
   app.post("/payment", amount);
 
