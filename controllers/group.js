@@ -1,11 +1,9 @@
 const Group = require("../models/group");
-const User = require("../models/user");
-const mongoose = require("mongoose");
 
 const group = (req, res) => {
   console.log(req.body);
   const newGroup = new Group({
-    member: req.body.member,
+    members: req.body.members,
     amount: req.body.amount,
   });
   newGroup.save(function (err) {
