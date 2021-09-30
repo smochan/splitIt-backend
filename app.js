@@ -6,6 +6,7 @@ const { login } = require("./controllers/auth/login");
 const { temp } = require("./controllers/temp");
 const { amount } = require("./controllers/amount");
 const { group } = require("./controllers/group");
+const { contributors } = require("./controllers/contributors")
 const cookieParser = require("cookie-parser");
 
 const app = express();
@@ -24,7 +25,7 @@ const start = async () => {
   app.get("/login", temp);
   // app.get("/register", temp);
   app.post("/group", group);
-
+  app.post("/contributors", contributors);
   app.post("/register", register);
   app.post("/payment", amount);
 
