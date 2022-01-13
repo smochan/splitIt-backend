@@ -1,4 +1,4 @@
-const Amount = require("../models/amount");
+const Amount = require('../models/expenses');
 
 const amount = async (req, res) => {
   try {
@@ -13,8 +13,8 @@ const amount = async (req, res) => {
     });
     await newAmount.save();
 
-    res.status(200).send("amount added");
-    console.log("amount added");
+    res.status(200).send('amount added');
+    console.log('amount added');
   } catch (err) {
     console.log(err);
   }
