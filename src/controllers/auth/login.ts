@@ -1,8 +1,7 @@
-require("dotenv").config();
-const User = require("../../models/user");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
-const Cookies = require("js-cookie");
+import User from "../../models/User";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
+import Cookies from "js-cookie";
 
 const login = async (req, res) => {
   try {
