@@ -1,9 +1,10 @@
-const mongoose = require("mongoose");
-const { User } = require("./user");
+import { model, Schema } from 'mongoose';
+import User from "./user";
+import { Group } from "./@types/group";
 
-const group = new mongoose.Schema({
+const groupSchema = new Schema({
   gName: String,
-  members: [{ type: mongoose.Schema.ObjectId, ref: User }],
+  members: [{ type: Schema.Types.ObjectId, ref: User }],
 });
 
-module.exports = mongoose.model("Group", group);
+export default model<Group>("Group", groupSchema);
