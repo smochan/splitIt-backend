@@ -1,15 +1,16 @@
-const mongoose = require('mongoose');
-const { User } = require('./user');
-const { Group } = require('./group');
+import { model, Schema } from 'mongoose';
+import  User from './user';
+import  Group from './group';
+import { Expenses } from "./@types/expenses"
 
-const expensesSchema = new mongoose.Schema({
-  groupID: { type: mongoose.Schema.ObjectId, ref: Group },
+const expensesSchema = new Schema({
+  groupID: { type: Schema.Types.ObjectId, ref: Group },
   comment: String,
-  payer: { type: mongoose.Schema.ObjectId, ref: User },
-  contributors: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
+  payer: { type: Schema.Types.ObjectId, ref: User },
+  contributors: [{ type: Schema.Types.ObjectId, ref: 'User' }],
   amount: Number,
   date: { type: Date, default: Date.now },
   status: Boolean,
 });
 
-module.exports = mongoose.model('Expense', expensesSchema);
+export default model<Expenses>("Expenses", expensesSchema)
