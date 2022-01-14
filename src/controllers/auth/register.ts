@@ -8,17 +8,20 @@ const register: Controller = async (req, res, next) => {
   try {
     User.findOne(
       {
-        email: req.body.username,
+        email: req.body.email,
       },
       function (err, foundUser) {
         if (err) console.log(err);
         else {
-          if (foundUser) res.send("User already exist");
+          if (foundUser) res.status(400).send("User already exist");
           else {
             bcrypt.hash(req.body.password, saltRounds, function (err, hash) {
               const newUser = new User({
-                email: req.body.username,
+                name: req.body.name,
+                email: req.body.email,
                 password: hash,
+                mobile: req.body.mobile,
+                groups: req.body.groups,
               });
               newUser.save(function (err) {
                 if (err) console.log(err);
