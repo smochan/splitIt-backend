@@ -1,11 +1,10 @@
-require("dotenv").config();
-const User = require("../../models/user");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
+import User from "../../models/user";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 // const Cookies = require('js-cookie');
 const saltRounds = 10;
 
-const register = async (req, res) => {
+const register: Controller = async (req, res, next) => {
   try {
     User.findOne(
       {
@@ -39,12 +38,11 @@ const register = async (req, res) => {
         }
       }
     );
+    return;
   } catch (err) {
-    console.log(err);
+    next(err);
     return;
   }
 };
 
-module.exports = {
-  register,
-};
+export default register;

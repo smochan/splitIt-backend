@@ -1,5 +1,5 @@
 import { Router } from 'express';
-const { temp } = require('./controllers/temp');
+// const { temp } = require('../controllers/temp');
 
 const route = Router();
 
@@ -7,7 +7,7 @@ const route = Router();
 // res.send('Hello World');
 // });
 
-route.get('/login', temp);
-route.get('/register', temp);
+// route.get('/login', temp);
+// route.get('/register', temp);
 
 export default route;
