@@ -3,5 +3,5 @@ export interface User {
           email: string;
           password: string;
           mobile: number;
-          groups: Array<string>;
+          groups?: Array<string>;
 }

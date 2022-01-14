@@ -1,6 +1,6 @@
 import Group from "../../models/group";
 
-const group: Controller = async (req, res, next) => {
+const group = async (req, res, next) => {
   try {
     console.log(req.body);
     const newGroup = new Group({

@@ -1,6 +1,6 @@
 import Expenses from '../../models/expenses';
 
-const expenses: Controller = async (req, res, next) => {
+const expenses = async (req, res, next) => {
   try {
     console.log(typeof req.body);
 

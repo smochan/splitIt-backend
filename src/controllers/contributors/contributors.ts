@@ -1,6 +1,6 @@
 import Contributors from "../../models/contributors";
 
-const contributors: Controller = async (req, res, next) => {
+const contributors = async (req, res, next) => {
   try {
     console.log(req.body);
     const newContributor = new Contributors({
