@@ -1,3 +1,3 @@
 ## splitIt-backend
 
-![Schema](https://ibb.co/bQLmm9P)
+![Schema](https://pbs.twimg.com/media/FJD6m7UaMAMhFAP?format=jpg&name=small)
