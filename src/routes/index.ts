@@ -1,6 +1,6 @@
-const Router = require('express');
-const userRouter = require('./user');
-const groupRouter = require('./group');
+import Router from 'express';
+import userRouter from './user';
+import groupRouter from './group';
 
 const routes = Router();
 

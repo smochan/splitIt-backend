@@ -1,9 +1,9 @@
-import User from "../../models/User";
+import User from "../../models/user";
 import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
-import Cookies from "js-cookie";
+// import jwt from "jsonwebtoken";
+// import Cookies from "js-cookie";
 
-const login = async (req, res) => {
+const login: Controller = async (req, res, next) => {
   try {
     const username = req.body.username;
     const password = req.body.password;
@@ -48,12 +48,10 @@ const login = async (req, res) => {
     );
     // }
     // });
+    return;
   } catch (err) {
-    console.log(err);
+    next(err);
     return;
   }
 };
-
-module.exports = {
-  login,
-};
+export default login;

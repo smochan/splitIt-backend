@@ -1,7 +1,8 @@
+// require('dotenv').config();
 import mongoose from 'mongoose';
 const connect = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URL, {
+    await mongoose.connect(`${process.env.MONGO_URL}`, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex: true,
@@ -14,4 +15,4 @@ const connect = async () => {
   }
 };
 
-export default connect;
+export default { connect };
