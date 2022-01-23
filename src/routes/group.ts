@@ -4,8 +4,8 @@ import controllers from '../controllers/group';
 
 const route = Router();
 
-route.post('/members', controllers.group);
-
+route.post('/add', controllers.group);
+route.get('/find/:id', controllers.find);
 // route.post('/members', temp);
 
 export default route;
