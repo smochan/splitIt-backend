@@ -1,3 +1,3 @@
 ## splitIt-backend
 
-![Schema](https://imgur.com/a/MPgewU6)
+![Schema](https://i.imgur.com/m4dh9nv.png)
