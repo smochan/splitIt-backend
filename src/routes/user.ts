@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import controllers from "../controllers/auth";
+import Group from '../models/group';
 // const { temp } = require('../controllers/temp');
 
 const route = Router();

@@ -7,8 +7,6 @@ const userSchema = new Schema({
   email: String,
   password: String,
   mobile: Number,
-  // friends?: Array,
-  groups: [{ type: Schema.Types.ObjectId, ref: Group }]
 });
 
 export default model<User>("User", userSchema);

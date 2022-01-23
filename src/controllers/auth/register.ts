@@ -1,7 +1,6 @@
 import User from "../../models/user";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-// const Cookies = require('js-cookie');
 const saltRounds = 10;
 
 const register: Controller = async (req, res, next) => {
