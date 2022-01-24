@@ -1,8 +1,8 @@
 import Group from "../../models/group";
 
 const findGroups = async (userId, next) => {
-  try{
-    const groups = await Group.find({"members": userId});
+  try {
+    const groups = await Group.find({ "members": userId });
     return groups;
   }
   catch (err) {

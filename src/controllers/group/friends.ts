@@ -1,9 +1,20 @@
 import Group from '../../models/group';
-import User from '../../models/user';
+// import User from '../../models/user';
+import findGroups from '../../helpers/groupHelpers/findGroups';
 
-const friends = async (req, res, next) => {
+const friends: Controller = async (req, res, next) => {
   try {
-    const data = await User.findOne({ _id: req.body.userId });
+    const id = req.params.id;
+    const response = await findGroups(id, next);
+    let friends = [];
+    for (let i = 0; i < response.length; i++) {
+      for (let j = 0; j < response[i].members.length; j++) {
+        const friend = response[i].members[j].toString();
+        if (!(friends.includes(friend)) && !(friend == id)) friends.push(response[i].members[j].toString());
+      }
+    }
+    res.status(200).send(friends);
+    return;
   } catch (err) {
     next(err);
     return;
