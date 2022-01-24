@@ -3,6 +3,6 @@ import controller from "../controllers/group"
 
 const route = Router();
 
-route.get("/friends", controller.group);
+route.get("/find/:id", controller.friends);
 
 export default route;

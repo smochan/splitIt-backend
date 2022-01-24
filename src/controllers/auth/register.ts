@@ -26,10 +26,10 @@ const register: Controller = async (req, res, next) => {
                 if (err) console.log(err);
                 // else {
                 //   var token = jwt.sign(
-                //     { token: req.body.username },
+                //     { token: req.body.email },
                 //     process.env.SECRET_KEY
                 //   );
-                // console.log(token);
+                //   console.log(token);
                 // res.cookie(token, token, { expire: 360000 + Date.now() });
                 // Cookies.set('token', token, { expires: 1 });
                 else res.send("user registered");
