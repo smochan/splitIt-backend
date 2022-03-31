@@ -3,8 +3,10 @@ import express from 'express';
 import database from './database';
 import cookieParser from 'cookie-parser';
 import router from './routes';
+import cors from 'cors';
 
 const app = express();
+app.use(cors());
 app.use(cookieParser());
 
 app.use(express.urlencoded({ extended: true }));
@@ -18,7 +20,7 @@ const start = async () => {
 
   app.use((err, req, res, next) => {
     console.error(err.stack);
-    res.status(500).json({ error: true, message: "Internal Server Error" });
+    res.status(500).json({ error: true, message: 'Internal Server Error' });
   });
 
   app.listen(3000, function () {
