@@ -1,11 +1,12 @@
 import { Router } from 'express';
-import controllers from "../controllers/auth";
+import controllers from '../controllers/auth';
 import Group from '../models/group';
 // const { temp } = require('../controllers/temp');
 
 const route = Router();
 
-route.post("/register", controllers.register);
+route.post('/register', controllers.register);
+route.post('/login', controllers.login);
 
 // app.get('/', function (req, res) {
 // res.send('Hello World');
