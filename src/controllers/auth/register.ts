@@ -1,6 +1,6 @@
-import User from "../../models/user";
-import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
+import User from '../../models/user';
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 const saltRounds = 10;
 
 const register: Controller = async (req, res, next) => {
@@ -12,7 +12,7 @@ const register: Controller = async (req, res, next) => {
       function (err, foundUser) {
         if (err) console.log(err);
         else {
-          if (foundUser) res.status(400).send("User already exist");
+          if (foundUser) res.status(400).send('User already exist');
           else {
             bcrypt.hash(req.body.password, saltRounds, function (err, hash) {
               const newUser = new User({
@@ -20,7 +20,6 @@ const register: Controller = async (req, res, next) => {
                 email: req.body.email,
                 password: hash,
                 mobile: req.body.mobile,
-                groups: req.body.groups,
               });
               newUser.save(function (err) {
                 if (err) console.log(err);
@@ -32,7 +31,7 @@ const register: Controller = async (req, res, next) => {
                 //   console.log(token);
                 // res.cookie(token, token, { expire: 360000 + Date.now() });
                 // Cookies.set('token', token, { expires: 1 });
-                else res.send("user registered");
+                else res.send('user registered');
                 // }
               });
             });

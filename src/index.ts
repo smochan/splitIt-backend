@@ -7,6 +7,7 @@ import cors from "cors";
 
 
 const app = express();
+app.use(cors());
 app.use(cookieParser());
 
 app.use(cors());
@@ -22,7 +23,7 @@ const start = async () => {
 
   app.use((err, req, res, next) => {
     console.error(err.stack);
-    res.status(500).json({ error: true, message: "Internal Server Error" });
+    res.status(500).json({ error: true, message: 'Internal Server Error' });
   });
 
   app.listen(8080, function () {
