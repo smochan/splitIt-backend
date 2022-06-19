@@ -1,6 +1,6 @@
 import User from '../../models/user';
 import bcrypt from 'bcrypt';
-import createToken from '../../utils/tokens/createToken';
+import createToken from '../../middleware/createToken';
 // import jwt from "jsonwebtoken";
 // import Cookies from "js-cookie";
 

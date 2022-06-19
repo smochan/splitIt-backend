@@ -1,10 +1,13 @@
 import { Router } from 'express';
 import controllers from '../controllers/auth';
 import Group from '../models/group';
+import profile from '../controllers/profile/profile';
+
 // const { temp } = require('../controllers/temp');
 
 const route = Router();
 
+route.get("/profile", profile);
 route.post('/register', controllers.register);
 route.post('/login', controllers.login);
 

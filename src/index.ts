@@ -3,11 +3,14 @@ import express from 'express';
 import database from './database';
 import cookieParser from 'cookie-parser';
 import router from './routes';
-import cors from 'cors';
+import cors from "cors";
+
 
 const app = express();
 app.use(cors());
 app.use(cookieParser());
+
+app.use(cors());
 
 app.use(express.urlencoded({ extended: true }));
 
@@ -23,8 +26,8 @@ const start = async () => {
     res.status(500).json({ error: true, message: 'Internal Server Error' });
   });
 
-  app.listen(3000, function () {
-    console.log('server started on port 3000');
+  app.listen(8080, function () {
+    console.log('server started on port 8080');
   });
 };
 
