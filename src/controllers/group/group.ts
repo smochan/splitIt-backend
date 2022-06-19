@@ -1,8 +1,10 @@
 import Group from '../../models/group';
 import User from '../../models/user';
+// ts-ignore
 
 const group: Controller = async (req, res, next) => {
   try {
+    console.log(req.user);
     const newGroup = new Group({
       gName: req.body.gname,
       members: req.body.members,
