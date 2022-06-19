@@ -11,9 +11,7 @@ const createToken = (id: string, next) => {
 
     // const hash = bcrypt.hash(id, process.env.SALT_ROUNDS);
 
-    const token = jwt.sign({ userId: id }, process.env.SECRET_KEY, {
-      expiresIn: '24h',
-    });
+    const token = jwt.sign({ userId: id }, process.env.SECRET_KEY);
     return { token };
     // return { accessToken };
   } catch (err) {
