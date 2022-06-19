@@ -2,15 +2,6 @@ import jwt from 'jsonwebtoken';
 
 const createToken = (id: string, next) => {
   try {
-    // const exp = "30d";
-    // const token = jwt.sign({ userId: id }, process.env.SECRET_KEY, {
-    //   expiresIn: exp,
-    // });
-
-    // const accessToken = { token, exp };
-
-    // const hash = bcrypt.hash(id, process.env.SALT_ROUNDS);
-
     const token = jwt.sign({ userId: id }, process.env.SECRET_KEY);
     return { token };
     // return { accessToken };
