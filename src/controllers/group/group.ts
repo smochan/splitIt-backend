@@ -1,6 +1,5 @@
 import Group from '../../models/group';
 import User from '../../models/user';
-// ts-ignore
 
 const group: Controller = async (req, res, next) => {
   try {
