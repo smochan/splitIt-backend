@@ -6,7 +6,7 @@ const verifyToken = async (req, res, next) => {
   try {
     const token = req.headers.authorization.split(' ')[1];
     const id = jwt.verify(token, process.env.SECRET_KEY);
-    const user = await getUserDetailsById(id.userID);
+    const user = await getUserDetailsById(id.userId);
     // User.findById(id.userId);
     req.user = user;
     return next();

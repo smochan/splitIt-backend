@@ -3,7 +3,7 @@ import User from '../../models/user';
 
 const group: Controller = async (req, res, next) => {
   try {
-    console.log(req.user);
+    console.log("user", req.user);
     const newGroup = new Group({
       gName: req.body.gname,
       members: req.body.members,
