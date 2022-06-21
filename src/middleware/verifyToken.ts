@@ -1,11 +1,13 @@
 import jwt from 'jsonwebtoken';
 import User from '../models/user';
+import { getUserDetailsById } from '../services/userRepository';
 
 const verifyToken = async (req, res, next) => {
   try {
     const token = req.headers.authorization.split(' ')[1];
     const id = jwt.verify(token, process.env.SECRET_KEY);
-    const user = await User.findById(id.userId);
+    const user = await getUserDetailsById(id.userID);
+    // User.findById(id.userId);
     req.user = user;
     return next();
     // return token;
