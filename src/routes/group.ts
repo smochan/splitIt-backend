@@ -6,7 +6,7 @@ import verifyToken from '../middleware/verifyToken';
 const route = Router();
 
 route.post('/add', verifyToken, controllers.group);
-route.get('/find/:id', controllers.find);
+route.get('/find/:id', verifyToken, controllers.find);
 // route.post('/members', temp);
 
 export default route;

@@ -1,4 +1,4 @@
-import group from "./group";
+import group from "./addNew";
 import friends from "./friends";
 import find from './find';
 
