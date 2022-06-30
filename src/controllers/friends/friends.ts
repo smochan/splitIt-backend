@@ -4,7 +4,7 @@ import findGroups from '../../helpers/groupHelpers/findGroups';
 
 const friends: Controller = async (req, res, next) => {
   try {
-    const id = req.params.id;
+    const id = req.user.id;
     const response = await findGroups(id, next);
     let friends = [];
     for (let i = 0; i < response.length; i++) {

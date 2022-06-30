@@ -1,5 +1,5 @@
 import Expense from '../../models/expenses';
-import findExpenses from '../../helpers/expenseHelpers/findExpenses';
+import {findExpenses} from '../../helpers/expenseHelpers/findExpenses';
 
 const find: Controller = async (req, res, next) => {
   try {
