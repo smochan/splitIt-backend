@@ -5,7 +5,7 @@ export const getUserDetailsById = async (id: string) => {
   if (!user) {
     return;
   }
-  return user;
+  return {name: user.name, email: user.email, mobile: user.mobile};
 }
 
 export const getUserDetailsByName = async (name: string) => {

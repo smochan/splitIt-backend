@@ -13,7 +13,13 @@ const friends: Controller = async (req, res, next) => {
         if (!(friends.includes(friend)) && !(friend == id)) friends.push(response[i].members[j].toString());
       }
     }
-    res.status(200).send(friends);
+    res.status(200).json(
+      {
+        message: "Friends fetched sucessfully",
+        data: {friends}
+
+      }
+    );
     return;
   } catch (err) {
     next(err);

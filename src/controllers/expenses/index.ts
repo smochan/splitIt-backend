@@ -1,3 +1,4 @@
-import expenses from "./expenses";
+import addNew from "./addNew";
+import find from './find';
 
-export default { expenses };
+export default { find, addNew };
