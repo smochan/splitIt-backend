@@ -4,17 +4,17 @@ const expenses = async (req, res, next) => {
   try {
     console.log(typeof req.body);
 
-    const newExpense = new Expenses({
-      // payer: req.body.payer,
+    const newExpense  = new Expenses({
+      payer: req.body.payer,
       amount: req.body.amount,
       comment: req.body.comment,
       status: req.body.status,
       contributors: req.body.contributors,
+      groupID: req.body.groupID,
     });
     await newExpense.save();
 
     res.status(200).send('Expense added');
-    console.log('Expense added');
   } catch (err) {
     next(err);
   }

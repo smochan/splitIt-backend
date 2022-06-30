@@ -4,7 +4,7 @@ import findGroups from '../../helpers/groupHelpers/findGroups';
 
 const friends: Controller = async (req, res, next) => {
   try {
-    const id = req.params.id;
+    const id = req.user.id;
     const response = await findGroups(id, next);
     let friends = [];
     for (let i = 0; i < response.length; i++) {
@@ -13,7 +13,13 @@ const friends: Controller = async (req, res, next) => {
         if (!(friends.includes(friend)) && !(friend == id)) friends.push(response[i].members[j].toString());
       }
     }
-    res.status(200).send(friends);
+    res.status(200).json(
+      {
+        message: "Friends fetched sucessfully",
+        data: {friends}
+
+      }
+    );
     return;
   } catch (err) {
     next(err);
